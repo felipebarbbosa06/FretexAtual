@@ -1,0 +1,48 @@
+page-anuncios {
+
+  .colButton {
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .unselected {
+    background-color: map-get($colors, dark-light)
+  }
+
+  .selected {
+    background-color: map-get($colors, dark)
+  }
+
+  .anuncioTitulo {
+    font-weight: bold;
+    font-size: large;
+    white-space: pre;
+  }
+
+  .anuncioAnuncio {
+    white-space: pre;
+  }
+
+  .thumbAnuncio {
+    width: 120;
+    border-radius: 50%;
+  }
+
+  .colThumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .colAnuncio {
+    padding-left: 15px!important;
+  }
+
+  .itemCustom {
+    border-bottom: 1px solid map-get($colors, colorBorder)
+  }
+}

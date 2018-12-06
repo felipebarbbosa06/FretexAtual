@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-navbar color="light">
+    <ion-title>
+      <h1>Criar conta</h1>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <br>
+    <br>
+    <br>
+    <br>
+    <ion-img style="width: 300px; height: 140px;" src="assets/images/fretex.jpeg"></ion-img>
+    <br>
+    <br>
+    <br>
+    <br>
+  <form #form="ngForm" novalidate>
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked>Nome</ion-label>
+        <ion-input type="text" name="nome" [(ngModel)]="user.nome" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>E-mail</ion-label>
+        <ion-input type="text" name="email" [(ngModel)]="user.email" required></ion-input>
+      </ion-item>
+
+<!--       
+      <ion-item>
+        <ion-label stacked>Rua</ion-label>
+        <ion-input type="text" name="rua" [(ngModel)]="user.endereco.rua" required></ion-input>
+      </ion-item>
+     
+      <ion-item>
+        <ion-label stacked>Numero</ion-label>
+        <ion-input type="text" name="numero" [(ngModel)]="user.endereco.numero" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Bairro</ion-label>
+        <ion-input type="text" name="bairro" [(ngModel)]="user.endereco.bairro" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>CEP</ion-label>
+        <ion-input type="text" name="cep" [(ngModel)]="user.endereco.cep" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Cidade</ion-label>
+        <ion-input type="text" name="cidade" [(ngModel)]="user.endereco.cidade" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Estado</ion-label>
+        <ion-input type="text" name="estado" [(ngModel)]="user.endereco.estado" required></ion-input>
+      </ion-item>
+      -->
+      <ion-item>
+        <ion-label stacked>Telefone</ion-label>
+        <ion-input type="text" name="telefone" [(ngModel)]="user.telefone" required></ion-input>
+      </ion-item>
+     
+      <ion-item>
+        <ion-label stacked>Senha</ion-label>
+        <ion-input type="password" name="password" [(ngModel)]="user.password" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Confirma Senha</ion-label>
+        <ion-input type="password" name="confirmaPassword" [(ngModel)]="user.confirmaPassword" required></ion-input>
+      </ion-item>
+     
+    </ion-list>
+
+    <button ion-button block color="dark" [disabled]="!form.form.valid" (click)="createAccount()">
+      Criar conta
+    </button>
+  </form>
+
+</ion-content>

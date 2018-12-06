@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar color="light">
+    <ion-title>Minha conta</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form #form="ngForm" novalidate>
+    <ion-list>
+
+      <ion-item>
+        <p>Email: {{userService.user.email}}</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Nome</ion-label>
+        <ion-input type="text" name="nome" [(ngModel)]="userService.user.nome" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Rua</ion-label>
+        <ion-input type="text" name="rua" [(ngModel)]="userService.user.endereco.rua"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Numero</ion-label>
+        <ion-input type="text" name="numero" [(ngModel)]="userService.user.endereco.numero"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Bairro</ion-label>
+        <ion-input type="text" name="bairro" [(ngModel)]="userService.user.endereco.bairro"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>CEP</ion-label>
+        <ion-input type="text" name="cep" [(ngModel)]="userService.user.endereco.cep"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Cidade</ion-label>
+        <ion-input type="text" name="cidade" [(ngModel)]="userService.user.endereco.cidade"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Estado</ion-label>
+        <ion-input type="text" name="estado" [(ngModel)]="userService.user.endereco.estado"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Telefone</ion-label>
+        <ion-input type="text" name="telefone" [(ngModel)]="userService.user.telefone"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Quero me tornar fretista</ion-label>
+        <ion-toggle name="fretista" [(ngModel)]="userService.user.fretista"></ion-toggle>
+      </ion-item>
+
+    </ion-list>
+
+  </form>
+
+  <button ion-button block color="dark" (click)="saveUser()">
+    SALVAR
+  </button>
+</ion-content>

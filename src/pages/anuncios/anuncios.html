@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>ANÚNCIOS</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 class="colButton" (click)="changeType('ANUNCIO')" [ngClass]="type == 'ANUNCIO' ? 'selected' : 'unselected'">
+        <p>ANÚNCIOS</p>
+      </ion-col>
+      <ion-col col-6 class="colButton" (click)="changeType('FRETE')" [ngClass]="type == 'FRETE' ? 'selected' : 'unselected'">
+        <p>FRETES</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list *ngIf="type == 'ANUNCIO'">
+    <ion-item *ngFor="let anuncio of anuncios" class="itemCustom">
+      <ion-grid no-padding>
+        <ion-row no-padding>
+          <ion-col col-3 no-padding class="colThumb">
+              <img class="thumbAnuncio" [src]="anuncio.foto ? anuncio.foto : 'assets/images/picture.svg'">
+          </ion-col>
+          <ion-col col-9 no-padding class="colAnuncio">
+            <p class="anuncioTitulo">{{anuncio.anunciante}}</p>
+            <p class="anuncioAnuncio">{{anuncio.anuncio}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-item>
+  </ion-list>
+
+  <ion-fab bottom right *ngIf="showFAB()">
+    <button ion-fab color="secondary" (click)="addFAB()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

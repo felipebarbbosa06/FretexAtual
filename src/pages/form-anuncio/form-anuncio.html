@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>ANÚNCIO</ion-title>
+
+    <ion-buttons end>
+      <button end ion-button icon-only (click)="close()">
+        <ion-icon name="close" color="white"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form #form="ngForm" novalidate>
+    <ion-list>
+
+      <img [src]="anuncio.foto ? anuncio.foto : 'assets/images/picture.svg'">
+
+      <ion-item>
+        <ion-label stacked>Anuncio</ion-label>
+        <ion-textarea rows="5" type="text" name="nome" [(ngModel)]="anuncio.anuncio" required></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Usar meu endereço de cadastro</ion-label>
+        <ion-toggle name="fretista" [(ngModel)]="enderecoCadastro" (ionChange)="changeEndereco()"></ion-toggle>
+      </ion-item>
+
+      <h5>ORIGEM</h5>
+      <div class="divOrigemDestino">
+        <ion-item>
+          <ion-label stacked>Rua</ion-label>
+          <ion-input type="text" name="rua" [(ngModel)]="anuncio.endereco.rua"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Numero</ion-label>
+          <ion-input type="text" name="numero" [(ngModel)]="anuncio.endereco.numero"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Bairro</ion-label>
+          <ion-input type="text" name="bairro" [(ngModel)]="anuncio.endereco.bairro"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>CEP</ion-label>
+          <ion-input type="text" name="cep" [(ngModel)]="anuncio.endereco.cep"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Cidade</ion-label>
+          <ion-input type="text" name="cidade" [(ngModel)]="anuncio.endereco.cidade"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Estado</ion-label>
+          <ion-input type="text" name="estado" [(ngModel)]="anuncio.endereco.estado"></ion-input>
+        </ion-item>
+
+      </div>
+      
+      <h5>DESTINO</h5>
+      <div class="divOrigemDestino">
+        <ion-item>
+          <ion-label stacked>Rua</ion-label>
+          <ion-input type="text" name="ruaDestino" [(ngModel)]="anuncio.destino.rua"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label stacked>Numero</ion-label>
+          <ion-input type="text" name="numeroDestino" [(ngModel)]="anuncio.destino.numero"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label stacked>Bairro</ion-label>
+          <ion-input type="text" name="bairroDestino" [(ngModel)]="anuncio.destino.bairro"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label stacked>CEP</ion-label>
+          <ion-input type="text" name="cepDestino" [(ngModel)]="anuncio.destino.cep"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label stacked>Cidade</ion-label>
+          <ion-input type="text" name="cidadeDestino" [(ngModel)]="anuncio.destino.cidade"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label stacked>Estado</ion-label>
+          <ion-input type="text" name="estadoDestino" [(ngModel)]="anuncio.destino.estado"></ion-input>
+        </ion-item>
+      </div>
+
+
+
+
+    </ion-list>
+
+  </form>
+
+  <button ion-button block color="dark" (click)="save()">
+    SALVAR
+  </button>
+</ion-content>

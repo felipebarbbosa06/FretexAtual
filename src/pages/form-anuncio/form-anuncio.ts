@@ -16,6 +16,7 @@ export class FormAnuncioPage implements OnInit {
 
   anuncio: AnunciosModel;
   enderecoCadastro = true;
+  ver:any;
 
   constructor(
     public navCtrl: NavController, 
@@ -27,6 +28,7 @@ export class FormAnuncioPage implements OnInit {
       this.anuncio = new AnunciosModel()
       this.anuncio.destino = new AnuncioEnderecoModel()
       console.log('anuncio', this.anuncio);
+
       
   }
 
@@ -53,14 +55,14 @@ export class FormAnuncioPage implements OnInit {
       this.anuncio.data = new Date(stillUtc)
 
       console.log(this.anuncio)
-      // this.enderecoCadastro = true;
-      // this.changeEndereco()
+       this.enderecoCadastro = true;
+       this.changeEndereco()
 
-      // anuncio.anuncio = ;
-      // anuncio.destino =
-      // anuncio.qualificacao =;
-      // anuncio.caracteristica =;
-      // anuncio.preco =;
+     // this.anuncio.anuncio = this.userService.user.endereco.numero;
+      // this.anuncio.destino =
+      // this.anuncio.qualificacao = this.userService.user.qualificacao;
+       //this.anuncio.caracteristica = this.userService.user.caracteristica;
+       //this.anuncio.preco = this.userService.user.preco;
     } else {
       this.anuncio = state.anuncio;
     }

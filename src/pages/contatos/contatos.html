@@ -15,7 +15,7 @@
 
 
 <ion-content padding>
- 
+  
   <br>
   <br>
   <ion-list>
@@ -28,12 +28,16 @@
         {{ item.nome }}
       </ion-item>
       <ion-item-options side="right">
+          <button ion-button icon-only color="danger" (click)="removeItem(item)">
+              <ion-icon name="trash"></ion-icon>
+            </button>
+
         <button ion-button icon-only color="primary" (click)="editItem(item)">
           <ion-icon name="create"></ion-icon>
         </button>
-        <button ion-button icon-only color="danger" (click)="removeItem(item)">
-          <ion-icon name="trash"></ion-icon>
-        </button>
+
+      
+
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>

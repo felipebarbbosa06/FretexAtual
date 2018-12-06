@@ -4,6 +4,8 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 import { UserProvider } from '../../providers/user/user';
 import { AnunciosModel } from '../../models/anuncios/index';
 import { UtilsService } from '../../providers/utils/utils.service';
+import { ViewAnuncioPage } from '../view-anuncio/view-anuncio';
+import { FormAnuncioPage } from '../form-anuncio/form-anuncio';
 
 @IonicPage()
 @Component({
@@ -26,6 +28,10 @@ export class AnunciosPage implements OnInit {
   ) {
     this.anuncios = [];
   }
+  
+  showAnuncio(item:any) {
+    this.navCtrl.push(FormAnuncioPage, {ver:item})
+    }
 
   ngOnInit() {
     
@@ -60,6 +66,8 @@ export class AnunciosPage implements OnInit {
       if (data) {
         this.getMore()
       }
+
+      
     });
   }
 
@@ -125,8 +133,13 @@ export class AnunciosPage implements OnInit {
             this.service.alert('Erro ao carregar anúncios', 'error')            
             loading.dismiss()
           }
+          
         )
+         
+        
+        }
     }
+    
   }
 
-}
+

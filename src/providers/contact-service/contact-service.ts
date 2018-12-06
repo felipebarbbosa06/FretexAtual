@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ContatosModel } from '../../models/contatos.models';
 import { UtilsService } from '../utils/utils.service';
+import firebase from 'firebase';
 
 @Injectable()
 export class ContactService {
@@ -8,6 +9,9 @@ export class ContactService {
   contatos: ContatosModel[];
   refCollection = 'contatos'
   contato: ContatosModel;
+  fb: any;
+  angularFireAuth: any;
+  items: any;
 
   constructor(
     public service: UtilsService
@@ -28,7 +32,7 @@ export class ContactService {
   }
 
   public uploadAndSave(item: any) {
-    /*
+    
      let contact = { $key: item.key, name: item.name, url: '', fullPath: '' };
  
      if (contact.$key) {
@@ -53,22 +57,25 @@ export class ContactService {
        });
      }
  
-     */
+   
+  }
+  save(contact: { $key: any; name: any; url: string; fullPath: string; }): any {
+    throw new Error("Method not implemented.");
   }
 
   public remove(item: any) {
-    /*
+    
      return this.items.remove(item.$key)
        .then(() => {
          this.removeFile(item.fullPath)
        });
-       */
+       
   }
 
   public removeFile(fullPath: string) {
-    /*
+    
      let storageRef = this.fb.storage().ref();
      storageRef.child(fullPath).delete();
-     */
+     
   }
 }

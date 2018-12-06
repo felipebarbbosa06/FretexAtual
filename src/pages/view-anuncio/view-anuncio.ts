@@ -9,8 +9,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'view-anuncio.html',
 })
 export class ViewAnuncioPage {
+  ver: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.ver = this.navParams.get('ver');
   }
 
   ionViewDidLoad() {
